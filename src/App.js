@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Products from './Components/Products'
+import './Components/styles.css'
 
 const App = () => {
   const [search ,setSearch]=useState('')
@@ -19,7 +20,7 @@ const App = () => {
      <center>
      <h3>Food Recipe App</h3>
       <form onSubmit={SubmitHandler}>
-        <input type='text'  value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="Search With recipe Name like (chicken)"/><br/>
+        <input type='text' className='inputc' value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="Search With recipe Name like (chicken)"/><br/>
         <input type='Submit' value='search' className='btn btn-primary'/>
       </form>
       {data.length>=1?<Products data={data} />:null}
